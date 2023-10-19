@@ -20,11 +20,15 @@ Code that is clean, well-documented, and follows best practices.
 ## Implementation summary
 ### Dependency injection
 Custom dependency injection container based on Swinject resolving mechanism
-2. Concurrency
+### Concurrency
 Base concurrency functionality is implemented using modern Swift Concurrency features
-3. UI
+### UI
 SwiftUI with injected UIKit view (UITextView) for better UX
-4. Persistence
+### Persistence
 Persistence based on DocumentBased NoSQL Firestore Database
-5. Testing
+### Testing
 Unit testing based on native framework (TBD), UI snapshot testing (TBD)
+### Monitoring
+Crashlytics by Firebase
+## To be implemented
+Authorization, Logging, Analytics
