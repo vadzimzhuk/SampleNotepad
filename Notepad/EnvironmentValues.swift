@@ -7,25 +7,13 @@
 
 import SwiftUI
 
-//    Storage service
-struct StorageObjectKey: EnvironmentKey {
-    static let defaultValue: StorageService = DIContainer.shared.resolve(StorageService.self)!
-}
-
-//     Entry factory
 struct EntryFactoryObjectKey: EnvironmentKey {
-    static let defaultValue: EntryFactoryService = DIContainer.shared.resolve(EntryFactoryService.self)!
+    static let defaultValue: EntriesProviderService = DIContainer.shared.resolve(EntriesProviderService.self)!
 }
 
 // MARK: - EnvironmentValues
 extension EnvironmentValues {
-    // Storage service
-    var storageService: StorageService {
-        self[StorageObjectKey.self]
-    }
-
-    // Entry factory
-    var entryFactory: EntryFactoryService {
+    var entriesManager: EntriesProviderService {
         get { self[EntryFactoryObjectKey.self] }
         set { self[EntryFactoryObjectKey.self] = newValue }
     }

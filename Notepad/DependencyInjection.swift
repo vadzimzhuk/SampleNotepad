@@ -38,11 +38,11 @@ final class DIContainer: DIContainerProtocol {
 extension DIContainer {
 
     func registerDependencies() {
-        register(StorageService.self) { _ in TmpStorage() }
+        register(StorageService.self) { _ in FirestoreStorage() }
             .inObjectScope(.container)
 
-        register(EntryFactoryService.self) { resolver in
-            EntryFactory(storageService: resolver.resolve(StorageService.self)!)
+        register(EntriesProviderService.self) { resolver in
+            EntriesManager(storageService: resolver.resolve(StorageService.self)!)
         }
         .inObjectScope(.container)
     }

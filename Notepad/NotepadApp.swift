@@ -9,8 +9,8 @@ import SwiftUI
 
 @main
 struct NotepadApp: App {
-
-    @Environment(\.entryFactory) var entryFactory
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @Environment(\.entriesManager) var entryFactory
 
     var body: some Scene {
         WindowGroup {

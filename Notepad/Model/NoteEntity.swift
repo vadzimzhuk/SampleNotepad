@@ -20,3 +20,10 @@ extension NoteEntity {
         self.body = note.body
     }
 }
+
+extension NoteEntity {
+    enum CodingKeys: String {
+        case title
+        case body
+    }
+}

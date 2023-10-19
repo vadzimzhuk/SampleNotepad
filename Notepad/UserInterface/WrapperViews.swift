@@ -19,16 +19,3 @@ struct NavigationLazyView<Content: View>: View {
         build()
     }
 }
-
-struct WrapperView <Content: View>: View {
-
-    var content: () -> Content
-
-    init(@ViewBuilder content: @escaping () -> Content) { self.content = content }
-
-    var body: some View {
-
-            content()
-
-    }
-}

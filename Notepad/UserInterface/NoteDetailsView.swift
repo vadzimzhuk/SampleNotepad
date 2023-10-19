@@ -8,40 +8,57 @@
 import SwiftUI
 
 struct NoteDetailsView: View {
+
+    enum Strings {
+        static var titlePlaceholder: String = "Enter title here"
+        static var saveButtonTitle: String = "Save"
+    }
+    
     @StateObject var builder: EntryBuilder
 
     @State var editState: Bool = false
     @FocusState var titleTextfieldFocused
+    @FocusState var bodyTextfieldFocused
+
+    private var textTapGesture: some Gesture {
+        TapGesture(count: 1)
+            .onEnded {
+                editState = true
+                titleTextfieldFocused = true
+            }
+    }
 
     var body: some View {
         VStack(spacing: 10) {
             if editState {
-                TextField("Enter title here", text: $builder.entry.title)
+                TextField(Strings.titlePlaceholder, text: $builder.entry.title)
                     .focused($titleTextfieldFocused)
+                    .onSubmit {
+                        editState = false
+                        builder.save()
+                    }
+                    .submitLabel(.done)
             } else {
                 Text(builder.entry.title)
+                    .gesture(textTapGesture)
             }
             Divider()
-            TextField("Note text", text: $builder.entry.body)
+
+            CustomTextView(text: $builder.entry.body)
+                .focused($bodyTextfieldFocused)
                 .frame(maxHeight: .infinity, alignment: .top)
         }
-        .frame(maxHeight: .infinity)
+        .padding()
 
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button(action: {
-                    builder.save()
-                    editState.toggle()
-                    titleTextfieldFocused = true
-                }, label: {
-                    Text(editState ? "Save change" : "Edit title")
-                })
 
                 if !editState {
                     Button(action: {
                         builder.save()
+                        bodyTextfieldFocused = false
                     }, label: {
-                        Text("Save")
+                        Text(Strings.saveButtonTitle)
                     })
                 }
             }
@@ -50,6 +67,6 @@ struct NoteDetailsView: View {
 }
 
 #Preview {
-    NoteDetailsView(builder: EntryBuilder(entryFactory: EntryFactory(storageService: TmpStorage()),
+    NoteDetailsView(builder: EntryBuilder(entryFactory: EntriesManager(storageService: FirestoreStorage()),
                                           entry: .init(id: "", title: "title", body: "body")))
 }

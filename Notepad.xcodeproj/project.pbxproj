@@ -21,6 +21,10 @@
 		0D18C3CD2AE168CA00DDA2BB /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0D18C3CC2AE168CA00DDA2BB /* FirebaseDatabaseSwift */; };
 		0D18C3CF2AE168CA00DDA2BB /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 0D18C3CE2AE168CA00DDA2BB /* FirebaseDynamicLinks */; };
 		0D18C3D12AE168CA00DDA2BB /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0D18C3D02AE168CA00DDA2BB /* FirebaseFirestore */; };
+		0D18C3D32AE1693700DDA2BB /* FirestoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D18C3D22AE1693700DDA2BB /* FirestoreStorage.swift */; };
+		0D18C3D52AE16CC400DDA2BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D18C3D42AE16CC400DDA2BB /* AppDelegate.swift */; };
+		0D18C3D72AE16D7B00DDA2BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D18C3D62AE16D7B00DDA2BB /* GoogleService-Info.plist */; };
+		0D18C3D92AE1AD0A00DDA2BB /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D18C3D82AE1AD0A00DDA2BB /* CustomTextView.swift */; };
 		0DAB60E02AE00A4100258574 /* NotepadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB60DF2AE00A4100258574 /* NotepadApp.swift */; };
 		0DAB60E22AE00A4100258574 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB60E12AE00A4100258574 /* RootView.swift */; };
 		0DAB60E42AE00A4400258574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DAB60E32AE00A4400258574 /* Assets.xcassets */; };
@@ -30,7 +34,7 @@
 		0DAB60F52AE0135000258574 /* NotePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB60F42AE0135000258574 /* NotePreviewView.swift */; };
 		0DAB60F72AE013B900258574 /* NoteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB60F62AE013B900258574 /* NoteDetailsView.swift */; };
 		0DAB60FB2AE118ED00258574 /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB60FA2AE118ED00258574 /* EnvironmentValues.swift */; };
-		0DAB60FD2AE11A9200258574 /* EntryFactoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB60FC2AE11A9200258574 /* EntryFactoryService.swift */; };
+		0DAB60FD2AE11A9200258574 /* EntriesProviderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB60FC2AE11A9200258574 /* EntriesProviderService.swift */; };
 		0DAB60FF2AE11D5900258574 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB60FE2AE11D5900258574 /* DependencyInjection.swift */; };
 		0DAB61022AE11DA100258574 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 0DAB61012AE11DA100258574 /* Swinject */; };
 		0DAB61042AE11DA100258574 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 0DAB61032AE11DA100258574 /* Swinject-Dynamic */; };
@@ -40,6 +44,10 @@
 
 /* Begin PBXFileReference section */
 		0D18C3B52AE1622C00DDA2BB /* EntryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryBuilder.swift; sourceTree = "<group>"; };
+		0D18C3D22AE1693700DDA2BB /* FirestoreStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreStorage.swift; sourceTree = "<group>"; };
+		0D18C3D42AE16CC400DDA2BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0D18C3D62AE16D7B00DDA2BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0D18C3D82AE1AD0A00DDA2BB /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		0DAB60DC2AE00A4100258574 /* Notepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notepad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAB60DF2AE00A4100258574 /* NotepadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadApp.swift; sourceTree = "<group>"; };
 		0DAB60E12AE00A4100258574 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -50,7 +58,7 @@
 		0DAB60F42AE0135000258574 /* NotePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePreviewView.swift; sourceTree = "<group>"; };
 		0DAB60F62AE013B900258574 /* NoteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsView.swift; sourceTree = "<group>"; };
 		0DAB60FA2AE118ED00258574 /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
-		0DAB60FC2AE11A9200258574 /* EntryFactoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryFactoryService.swift; sourceTree = "<group>"; };
+		0DAB60FC2AE11A9200258574 /* EntriesProviderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesProviderService.swift; sourceTree = "<group>"; };
 		0DAB60FE2AE11D5900258574 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		0DAB61052AE14C0C00258574 /* WrapperViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperViews.swift; sourceTree = "<group>"; };
 		0DAB61082AE1589B00258574 /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
@@ -105,10 +113,12 @@
 				0DAB60F02AE00BA200258574 /* Services */,
 				0DAB60ED2AE00A5200258574 /* Model */,
 				0DAB60DF2AE00A4100258574 /* NotepadApp.swift */,
+				0D18C3D42AE16CC400DDA2BB /* AppDelegate.swift */,
 				0DAB60FA2AE118ED00258574 /* EnvironmentValues.swift */,
 				0DAB60FE2AE11D5900258574 /* DependencyInjection.swift */,
 				0DAB60F32AE010AE00258574 /* UserInterface */,
 				0DAB60E32AE00A4400258574 /* Assets.xcassets */,
+				0D18C3D62AE16D7B00DDA2BB /* GoogleService-Info.plist */,
 				0DAB60E52AE00A4400258574 /* Preview Content */,
 			);
 			path = Notepad;
@@ -134,7 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				0DAB60F12AE00BDB00258574 /* StorageService.swift */,
-				0DAB60FC2AE11A9200258574 /* EntryFactoryService.swift */,
+				0D18C3D22AE1693700DDA2BB /* FirestoreStorage.swift */,
+				0DAB60FC2AE11A9200258574 /* EntriesProviderService.swift */,
 				0D18C3B52AE1622C00DDA2BB /* EntryBuilder.swift */,
 			);
 			path = Services;
@@ -146,6 +157,7 @@
 				0DAB60E12AE00A4100258574 /* RootView.swift */,
 				0DAB60F42AE0135000258574 /* NotePreviewView.swift */,
 				0DAB60F62AE013B900258574 /* NoteDetailsView.swift */,
+				0D18C3D82AE1AD0A00DDA2BB /* CustomTextView.swift */,
 				0DAB61052AE14C0C00258574 /* WrapperViews.swift */,
 			);
 			path = UserInterface;
@@ -240,6 +252,7 @@
 			files = (
 				0DAB60E72AE00A4400258574 /* Preview Assets.xcassets in Resources */,
 				0DAB60E42AE00A4400258574 /* Assets.xcassets in Resources */,
+				0D18C3D72AE16D7B00DDA2BB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,16 +263,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D18C3D32AE1693700DDA2BB /* FirestoreStorage.swift in Sources */,
 				0DAB60E22AE00A4100258574 /* RootView.swift in Sources */,
 				0DAB60F22AE00BDB00258574 /* StorageService.swift in Sources */,
 				0DAB60FF2AE11D5900258574 /* DependencyInjection.swift in Sources */,
+				0D18C3D52AE16CC400DDA2BB /* AppDelegate.swift in Sources */,
 				0DAB61062AE14C0C00258574 /* WrapperViews.swift in Sources */,
 				0DAB60F52AE0135000258574 /* NotePreviewView.swift in Sources */,
 				0DAB60EF2AE00A9200258574 /* NoteEntity.swift in Sources */,
 				0DAB61092AE1589B00258574 /* NSNotification.swift in Sources */,
 				0DAB60E02AE00A4100258574 /* NotepadApp.swift in Sources */,
 				0DAB60F72AE013B900258574 /* NoteDetailsView.swift in Sources */,
-				0DAB60FD2AE11A9200258574 /* EntryFactoryService.swift in Sources */,
+				0D18C3D92AE1AD0A00DDA2BB /* CustomTextView.swift in Sources */,
+				0DAB60FD2AE11A9200258574 /* EntriesProviderService.swift in Sources */,
 				0D18C3B62AE1622C00DDA2BB /* EntryBuilder.swift in Sources */,
 				0DAB60FB2AE118ED00258574 /* EnvironmentValues.swift in Sources */,
 			);

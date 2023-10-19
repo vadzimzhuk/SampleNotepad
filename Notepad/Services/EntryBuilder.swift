@@ -10,9 +10,9 @@ import SwiftUI
 class EntryBuilder: ObservableObject {
     @Published var entry: NoteEntity
 
-    private var entryFactory: EntryFactoryService
+    private var entryFactory: EntriesProviderService
 
-    init(entryFactory: EntryFactoryService,
+    init(entryFactory: EntriesProviderService,
         entry: NoteEntity) {
         self.entryFactory = entryFactory
         self.entry = entry

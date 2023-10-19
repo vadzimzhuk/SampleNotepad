@@ -8,40 +8,101 @@
 import SwiftUI
 
 struct RootView: View {
-    
-    @Environment(\.entryFactory) var entryFactory
-    @Environment(\.storageService) var storageService
+    enum Strings {
+        static var appTitle: String = "Sample notepad app"
+        static var deleteButtonTitle: String = "Delete"
+        static var emptyNotesMessage: String = "Empty notepad"
+    }
+
+    enum Images {
+        static var newNoteButtonImage: Image = Image(systemName: "doc.plaintext")
+    }
+
+    @Environment(\.entriesManager) var entriesManager
 
     @State var notes: [NoteEntity] = []
+    @State var showNewEntry: Bool = false
+
+    private var textTapGesture: some Gesture {
+        TapGesture(count: 1)
+            .onEnded {
+                showNewEntry = true
+            }
+    }
 
     var body: some View {
-        NavigationView {
-            List(notes, id: \.id) { note in
-                    NavigationLink {
-                        NavigationLazyView(
-                            NoteDetailsView(builder: EntryBuilder(entryFactory: entryFactory,
-                                                                  entry: note))
-                        )
-                    } label: {
-                        NotePreviewView(title: note.title)
-                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-
-                                Button("Delete") {
-                                    withAnimation {
-                                        storageService.removeNote(with: note.id)
-                                    }
-                                }
-                                .tint(.red)
-                            }
+        NavigationStack {
+            ZStack {
+                if notes.isEmpty {
+                    VStack {
+                        Spacer()
+                        Text(Strings.emptyNotesMessage)
+                        Spacer()
                     }
+                }
+
+                VStack {
+                    Text(Strings.appTitle.capitalized)
+                        .font(.largeTitle)
+
+                    List(notes, id: \.id) { note in
+                        NavigationLink {
+                            NavigationLazyView(
+                                NoteDetailsView(builder: EntryBuilder(entryFactory: entriesManager,
+                                                                      entry: note))
+                            )
+                        } label: {
+                            NotePreviewView(title: note.title)
+                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+
+                                    Button(Strings.deleteButtonTitle) {
+                                        withAnimation {
+                                            entriesManager.removeNote(with: note.id)
+                                        }
+                                    }
+                                    .tint(.red)
+                                }
+                        }
+                    }
+                    .listStyle(.plain)
+                }
+
+                VStack {
+                    Spacer()
+                    HStack(alignment: .bottom) {
+                        Spacer()
+
+                        ZStack {
+                            Circle()
+                                .fill(Color.teal)
+                                .frame(width: 50, height: 50)
+                            Text("\(Images.newNoteButtonImage)")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }
+                        .gesture(textTapGesture)
+
+                        Spacer()
+                            .frame(width: 15)
+                    }
+                }
+                .padding(.vertical, 10)
             }
-            .listStyle(.plain)
+            .navigationDestination(isPresented: $showNewEntry) {
+                NavigationLazyView(
+                    NoteDetailsView(builder: EntryBuilder(entryFactory: entriesManager, entry: entriesManager.createEntry()))
+                )
+            }
         }
         .onAppear {
-            notes = storageService.getAllNotes()
+            Task {
+                notes = await entriesManager.getAllNotes()
+            }
         }
         .onReceive(NotificationCenter.default.publisher(for: .storageUpdated)) { _ in
-                notes = storageService.getAllNotes()
+            Task {
+                notes = await entriesManager.getAllNotes()
+            }
         }
     }
 }
