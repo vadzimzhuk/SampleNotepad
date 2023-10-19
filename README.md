@@ -17,3 +17,14 @@ Firebase integration for data storage and synchronisation.
 The ability to create & edit notes.
 Real-time synchronisation of notes.
 Code that is clean, well-documented, and follows best practices.
+## Implementation summary
+### Dependency injection
+Custom dependency injection container based on Swinject resolving mechanism
+2. Concurrency
+Base concurrency functionality is implemented using modern Swift Concurrency features
+3. UI
+SwiftUI with injected UIKit view (UITextView) for better UX
+4. Persistence
+Persistence based on DocumentBased NoSQL Firestore Database
+5. Testing
+Unit testing based on native framework (TBD), UI snapshot testing (TBD)
