@@ -17,6 +17,7 @@ struct NoteDetailsView: View {
     @StateObject var builder: EntryBuilder
 
     @State var editState: Bool = false
+
     @FocusState var titleTextfieldFocused
     @FocusState var bodyTextfieldFocused
 
@@ -52,15 +53,14 @@ struct NoteDetailsView: View {
 
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-
-                if !editState {
-                    Button(action: {
-                        builder.save()
-                        bodyTextfieldFocused = false
-                    }, label: {
-                        Text(Strings.saveButtonTitle)
-                    })
-                }
+                Button(action: {
+                    builder.save()
+                    editState = false
+                    bodyTextfieldFocused = false
+                    titleTextfieldFocused = false
+                }, label: {
+                    Text(Strings.saveButtonTitle)
+                })
             }
         }
     }

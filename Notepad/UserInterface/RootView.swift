@@ -15,7 +15,7 @@ struct RootView: View {
     }
 
     enum Images {
-        static var newNoteButtonImage: Image = Image(systemName: "doc.plaintext")
+        static var newNoteButtonImage: Image = Image(systemName: "plus")
     }
 
     @Environment(\.entriesManager) var entriesManager
@@ -74,7 +74,7 @@ struct RootView: View {
 
                         ZStack {
                             Circle()
-                                .fill(Color.teal)
+                                .fill(Color.pink)
                                 .frame(width: 50, height: 50)
                             Text("\(Images.newNoteButtonImage)")
                                 .fontWeight(.bold)
