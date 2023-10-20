@@ -25,10 +25,11 @@
 		0D18C3D52AE16CC400DDA2BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D18C3D42AE16CC400DDA2BB /* AppDelegate.swift */; };
 		0D18C3D72AE16D7B00DDA2BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D18C3D62AE16D7B00DDA2BB /* GoogleService-Info.plist */; };
 		0D18C3D92AE1AD0A00DDA2BB /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D18C3D82AE1AD0A00DDA2BB /* CustomTextView.swift */; };
-		0D18C3F32AE2761800DDA2BB /* EntryBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D18C3F22AE2761800DDA2BB /* EntryBuilderTests.swift */; };
 		0D18C3FB2AE2763400DDA2BB /* StorageServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D18C3FA2AE2763400DDA2BB /* StorageServiceMock.swift */; };
-		0D18C3FD2AE2779400DDA2BB /* NotesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D18C3FC2AE2779400DDA2BB /* NotesManagerTests.swift */; };
 		0D18C3FF2AE27F1400DDA2BB /* EntriesManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D18C3FE2AE27F1400DDA2BB /* EntriesManagerMock.swift */; };
+		0D87A5682AE2A5380012BC90 /* NoteEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87A5642AE2A5380012BC90 /* NoteEntityTests.swift */; };
+		0D87A5692AE2A5380012BC90 /* EntryBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87A5662AE2A5380012BC90 /* EntryBuilderTests.swift */; };
+		0D87A56A2AE2A5380012BC90 /* NotesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87A5672AE2A5380012BC90 /* NotesManagerTests.swift */; };
 		0DAB60E02AE00A4100258574 /* NotepadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB60DF2AE00A4100258574 /* NotepadApp.swift */; };
 		0DAB60E22AE00A4100258574 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB60E12AE00A4100258574 /* RootView.swift */; };
 		0DAB60E42AE00A4400258574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DAB60E32AE00A4400258574 /* Assets.xcassets */; };
@@ -63,10 +64,11 @@
 		0D18C3D62AE16D7B00DDA2BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D18C3D82AE1AD0A00DDA2BB /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		0D18C3F02AE2761800DDA2BB /* NotepadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotepadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D18C3F22AE2761800DDA2BB /* EntryBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryBuilderTests.swift; sourceTree = "<group>"; };
 		0D18C3FA2AE2763400DDA2BB /* StorageServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceMock.swift; sourceTree = "<group>"; };
-		0D18C3FC2AE2779400DDA2BB /* NotesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesManagerTests.swift; sourceTree = "<group>"; };
 		0D18C3FE2AE27F1400DDA2BB /* EntriesManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesManagerMock.swift; sourceTree = "<group>"; };
+		0D87A5642AE2A5380012BC90 /* NoteEntityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEntityTests.swift; sourceTree = "<group>"; };
+		0D87A5662AE2A5380012BC90 /* EntryBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryBuilderTests.swift; sourceTree = "<group>"; };
+		0D87A5672AE2A5380012BC90 /* NotesManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesManagerTests.swift; sourceTree = "<group>"; };
 		0DAB60DC2AE00A4100258574 /* Notepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notepad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAB60DF2AE00A4100258574 /* NotepadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadApp.swift; sourceTree = "<group>"; };
 		0DAB60E12AE00A4100258574 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -120,8 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				0D18C3F92AE2763400DDA2BB /* Mocks */,
-				0D18C3F22AE2761800DDA2BB /* EntryBuilderTests.swift */,
-				0D18C3FC2AE2779400DDA2BB /* NotesManagerTests.swift */,
+				0D87A5642AE2A5380012BC90 /* NoteEntityTests.swift */,
+				0D87A5652AE2A5380012BC90 /* Services */,
 			);
 			path = NotepadTests;
 			sourceTree = "<group>";
@@ -133,6 +135,15 @@
 				0D18C3FE2AE27F1400DDA2BB /* EntriesManagerMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		0D87A5652AE2A5380012BC90 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0D87A5662AE2A5380012BC90 /* EntryBuilderTests.swift */,
+				0D87A5672AE2A5380012BC90 /* NotesManagerTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		0DAB60D32AE00A4000258574 = {
@@ -340,10 +351,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D18C3F32AE2761800DDA2BB /* EntryBuilderTests.swift in Sources */,
 				0D18C3FB2AE2763400DDA2BB /* StorageServiceMock.swift in Sources */,
+				0D87A56A2AE2A5380012BC90 /* NotesManagerTests.swift in Sources */,
+				0D87A5692AE2A5380012BC90 /* EntryBuilderTests.swift in Sources */,
 				0D18C3FF2AE27F1400DDA2BB /* EntriesManagerMock.swift in Sources */,
-				0D18C3FD2AE2779400DDA2BB /* NotesManagerTests.swift in Sources */,
+				0D87A5682AE2A5380012BC90 /* NoteEntityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
