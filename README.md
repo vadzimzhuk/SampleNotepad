@@ -17,6 +17,7 @@ Firebase integration for data storage and synchronisation.
 The ability to create & edit notes.
 Real-time synchronisation of notes.
 Code that is clean, well-documented, and follows best practices.
+
 ## Implementation summary
 ### Dependency injection
 Custom dependency injection container based on Swinject resolving mechanism
@@ -27,8 +28,15 @@ SwiftUI with injected UIKit view (UITextView) for better UX
 ### Persistence
 Persistence based on DocumentBased NoSQL Firestore Database
 ### Testing
-Unit testing based on native framework (TBD), UI snapshot testing (TBD)
+As the importance of the best practices was declared I implemented basic testing functionality in order to have coverage from the initial project state.
+Tests are useful not only for automated testing purposes but also as a source of truth and the requirements for the implemented functionality.
+Unit testing based on native framework that i guess is enough at this point
+### Authorization
+To be implemented
+As authorization were not mentioned and as a result not implemented, i decided not to separate users and use a single one collection on Firestore side for all notes
+### Documentation
+According to best practises the code shouldn't be documented directly if the functionality is obvious, so I decided to provide readme instead
 ### Monitoring
 Crashlytics by Firebase
 ## To be implemented
-Authorization, Logging, Analytics
+Logging, Analytics, UITests, SnapshotTests, Integration Tests
