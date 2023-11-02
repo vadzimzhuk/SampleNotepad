@@ -19,12 +19,13 @@ Real-time synchronisation of notes.
 Code that is clean, well-documented, and follows best practices.
 
 ## Implementation summary
+### Time spent - 6hrs
 ### Dependency injection
-Custom dependency injection container based on Swinject resolving mechanism
+Custom dependency injection container based on **Swinject framework's** resolving mechanism
 ### Concurrency
 Base concurrency functionality is implemented using modern Swift Concurrency features
 ### UI
-SwiftUI with injected UIKit view (UITextView) for better UX
+Mostly SwiftUI with injected UIKit view (UITextView) for better UX
 ### Persistence
 Persistence based on DocumentBased NoSQL Firestore Database
 ### Testing
